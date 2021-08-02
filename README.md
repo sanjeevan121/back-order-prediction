@@ -7,7 +7,7 @@ Training and Prediction is done using postman
     "folderPath":"Training_Batch_Files"
 }
 
-2) For training,please enter this json in the body of api /predict route
+2) For prediction,please enter this json in the body of api /predict route
 
 {
     "folderPath":"Prediction_Batch_Files"
