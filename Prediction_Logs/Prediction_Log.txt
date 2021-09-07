@@ -1,0 +1,14 @@
+2021-09-07/16:40:36		Start of Prediction
+2021-09-07/16:40:36		Entered the get_data method of the Data_Getter class
+2021-09-07/16:40:37		Data Load Successful.Exited the get_data method of the Data_Getter class
+2021-09-07/16:40:37		Entered the remove_columns method of the Preprocessor class
+2021-09-07/16:40:37		Column removal Successful.Exited the remove_columns method of the Preprocessor class
+2021-09-07/16:40:37		Entered the is_null_present method of the Preprocessor class
+2021-09-07/16:40:37		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2021-09-07/16:40:37		Entered the scale_numerical_columns method of the Preprocessor class
+2021-09-07/16:40:37		scaling for numerical values successful. Exited the scale_numerical_columns method of the Preprocessor class
+2021-09-07/16:40:37		Entered the find_correct_model_file method of the File_Operation class
+2021-09-07/16:40:37		Exited the find_correct_model_file method of the Model_Finder class.
+2021-09-07/16:40:37		Entered the load_model method of the File_Operation class
+2021-09-07/16:40:37		Model File KMeans loaded. Exited the load_model method of the Model_Finder class
+2021-09-07/16:40:37		End of Prediction

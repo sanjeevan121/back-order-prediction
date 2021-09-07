@@ -10,11 +10,9 @@ from application_logging.logger import App_Logger
 class dBOperation:
     """
           This class shall be used for handling all the SQL operations.
-
           Written By: Sanjeevan Thorat
           Version: 1.0
           Revisions: None
-
           """
 
     def __init__(self):
@@ -31,11 +29,9 @@ class dBOperation:
                         Description: This method creates the database with the given name and if Database already exists then opens the connection to the DB.
                         Output: Connection to the DB
                         On Failure: Raise ConnectionError
-
                          Written By: Sanjeevan Thorat
                         Version: 1.0
                         Revisions: None
-
                         """
         try:
             conn = sqlite3.connect(self.path+DatabaseName+'.db')
@@ -57,11 +53,9 @@ class dBOperation:
            Description: This method creates a table in the given database which will be used to insert the Good data after raw data validation.
            Output: None
            On Failure: Raise Exception
-
             Written By: Sanjeevan Thorat
            Version: 1.0
            Revisions: None
-
         """
         try:
             conn = self.dataBaseConnection(DatabaseName)
@@ -108,11 +102,9 @@ class dBOperation:
                                                     above created table.
                                        Output: None
                                        On Failure: Raise Exception
-
                                         Written By: Sanjeevan Thorat
                                        Version: 1.0
                                        Revisions: None
-
                 """
 
         conn = self.dataBaseConnection(Database)
@@ -127,15 +119,16 @@ class dBOperation:
                 with open(goodFilePath+'/'+file, "r") as f:
                     next(f)
                     reader = csv.reader(f, delimiter="\n")
+                    conn.execute('begin')
                     for line in enumerate(reader):
                         for list_ in (line[1]):
                             try:
                                 conn.execute('INSERT INTO Good_Raw_Data values ({values})'.format(values=(list_)))
                                 self.logger.log(log_file," %s: File loaded successfully!!" % file)
-                                conn.commit()
+
                             except Exception as e:
                                 raise e
-
+                    conn.commit()
             except Exception as e:
 
                 conn.rollback()
@@ -158,11 +151,9 @@ class dBOperation:
                                                     above created .
                                        Output: None
                                        On Failure: Raise Exception
-
                                         Written By: Sanjeevan Thorat
                                        Version: 1.0
                                        Revisions: None
-
                 """
 
         self.fileFromDb = 'Prediction_FileFromDB/'
@@ -196,8 +187,5 @@ class dBOperation:
         except Exception as e:
             self.logger.log(log_file, "File exporting failed. Error : %s" %e)
             raise e
-
-
-
 
 

@@ -1,0 +1,43 @@
+2021-09-07/18:31:23		Start of Training
+2021-09-07/18:31:23		Entered the get_data method of the Data_Getter class
+2021-09-07/18:31:24		Data Load Successful.Exited the get_data method of the Data_Getter class
+2021-09-07/18:31:24		Entered the remove_columns method of the Preprocessor class
+2021-09-07/18:31:24		Column removal Successful.Exited the remove_columns method of the Preprocessor class
+2021-09-07/18:31:24		Entered the is_null_present method of the Preprocessor class
+2021-09-07/18:31:24		Finding missing values is a success.Data written to the null values file. Exited the is_null_present method of the Preprocessor class
+2021-09-07/18:31:24		Entered the separate_label_feature method of the Preprocessor class
+2021-09-07/18:31:24		Label Separation Successful. Exited the separate_label_feature method of the Preprocessor class
+2021-09-07/18:31:24		Entered the get_columns_with_zero_std_deviation method of the Preprocessor class
+2021-09-07/18:31:24		Column search for Standard Deviation of Zero Successful. Exited the get_columns_with_zero_std_deviation method of the Preprocessor class
+2021-09-07/18:31:24		Entered the remove_columns method of the Preprocessor class
+2021-09-07/18:31:24		Column removal Successful.Exited the remove_columns method of the Preprocessor class
+2021-09-07/18:31:24		Entered the scale_numerical_columns method of the Preprocessor class
+2021-09-07/18:31:24		scaling for numerical values successful. Exited the scale_numerical_columns method of the Preprocessor class
+2021-09-07/18:31:24		Entered the elbow_plot method of the KMeansClustering class
+2021-09-07/18:31:31		The optimum number of clusters is: 3 . Exited the elbow_plot method of the KMeansClustering class
+2021-09-07/18:31:31		Entered the create_clusters method of the KMeansClustering class
+2021-09-07/18:31:31		Entered the save_model method of the File_Operation class
+2021-09-07/18:31:31		Model File KMeans saved. Exited the save_model method of the Model_Finder class
+2021-09-07/18:31:31		succesfully created 3clusters. Exited the create_clusters method of the KMeansClustering class
+2021-09-07/18:31:31		Entered the get_best_model method of the Model_Finder class
+2021-09-07/18:31:31		Entered the get_best_params_for_svm of the Model_Finder class
+2021-09-07/19:00:22		SVM best params: {'C': 0.1, 'degree': 1, 'gamma': 'scale', 'kernel': 'linear'}. Exited the get_best_params_for_svm method of the Model_Finder class
+2021-09-07/19:00:22		AUC for SVM:1.0
+2021-09-07/19:00:22		Entered the get_best_params_for_logistic_regression method of the Model_Finder class
+2021-09-07/19:09:43		Logistic Regression best params: {'Cs': 3, 'cv': 3, 'solver': 'newton-cg'}. Exited the get_best_params_for_logistic_regression method of the Model_Finder class
+2021-09-07/19:09:43		AUC for logistic:1.0
+2021-09-07/19:09:43		Entered the get_best_params_for_naive_bayes method of the Model_Finder class
+2021-09-07/19:09:43		Naive Bayes best params: {'var_smoothing': 1e-10}. Exited the get_best_params_for_naive_bayes method of the Model_Finder class
+2021-09-07/19:09:43		AUC for Naive Bayes:1.0
+2021-09-07/19:09:43		Entered the get_best_params_for_catboost method of the Model_Finder class
+2021-09-07/19:18:24		Random Forest best params: {'learning_rate': 0.5, 'max_depth': 2, 'n_estimators': 10}. Exited the get_best_params_for_random_forest method of the Model_Finder class
+2021-09-07/19:18:24		AUC for CatBoost:1.0
+2021-09-07/19:18:24		Entered the get_best_params_for_xgboost method of the Model_Finder class
+2021-09-07/19:22:01		XGBoost best params: {'learning_rate': 0.5, 'max_depth': 3, 'n_estimators': 10}. Exited the get_best_params_for_xgboost method of the Model_Finder class
+2021-09-07/19:22:01		AUC for XGBoost:1.0
+2021-09-07/19:22:01		Entered the get_best_params_for_random_forest method of the Model_Finder class
+2021-09-07/19:23:27		Random Forest best params: {'criterion': 'gini', 'max_depth': 2, 'max_features': 'auto', 'n_estimators': 100}. Exited the get_best_params_for_random_forest method of the Model_Finder class
+2021-09-07/19:23:27		AUC for RF:1.0
+2021-09-07/19:23:27		Entered the save_model method of the File_Operation class
+2021-09-07/19:23:27		Model File SVM2 saved. Exited the save_model method of the Model_Finder class
+2021-09-07/19:23:27		Successful End of Training

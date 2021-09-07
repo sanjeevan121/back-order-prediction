@@ -5,7 +5,7 @@ from os import listdir
 import os
 import csv
 from application_logging.logger import App_Logger
-
+import pandas as pd
 
 class dBOperation:
     """
@@ -144,16 +144,19 @@ class dBOperation:
                 with open(goodFilePath+'/'+file, "r") as f:
                     next(f)
                     reader = csv.reader(f, delimiter="\n")
+                    conn.execute('begin')
                     for line in enumerate(reader):
                         for list_ in (line[1]):
                             try:
                                 conn.execute('INSERT INTO Good_Raw_Data values ({values})'.format(values=(list_)))
                                 self.logger.log(log_file," %s: File loaded successfully!!" % file)
-                                conn.commit()
+
                             except Exception as e:
                                 raise e
-
+                    conn.commit()
             except Exception as e:
+                raise e
+
 
                 conn.rollback()
                 self.logger.log(log_file,"Error while creating table: %s " % e)

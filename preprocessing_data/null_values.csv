@@ -1,6 +1,6 @@
 ,columns,missing values count
 0,national_inv,0
-1,lead_time,1215
+1,lead_time,3610
 2,in_transit_qty,0
 3,forecast_3_month,0
 4,forecast_6_month,0

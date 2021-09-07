@@ -13,8 +13,6 @@ os.putenv('LANG', 'en_US.UTF-8')
 os.putenv('LC_ALL', 'en_US.UTF-8')
 
 app = Flask(__name__)
-dashboard.bind(app)
-CORS(app)
 
 
 
@@ -53,7 +51,7 @@ def trainRouteClient():
             path = request.json['folderPath']
             train_valObj = train_validation(path) #object initialization
 
-            #train_valObj.train_validation()#calling the training_validation function
+            train_valObj.train_validation()#calling the training_validation function
 
 
             trainModelObj = trainModel() #object initialization
@@ -62,19 +60,17 @@ def trainRouteClient():
 
     except ValueError:
 
-        return Response("Error Occurred! %s" % ValueError)
+        return Response("value Error Occurred! %s" % ValueError)
 
     except KeyError:
 
-        return Response("Error Occurred! %s" % KeyError)
+        return Response("key Error Occurred! %s" % KeyError)
 
     except Exception as e:
 
-        return Response("Error Occurred! %s" % e)
+        return Response(" Error Occurred! %s" % e)
     return Response("Training successfull!!")
 
-#port = int(os.getenv("PORT"))
+
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
-    # print("Serving on %s %d" % (host, port))
- #   httpd.serve_forever()
+    app.run(host='0.0.0.0',port=8000)

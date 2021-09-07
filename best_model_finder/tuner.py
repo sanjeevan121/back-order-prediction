@@ -44,7 +44,7 @@ class Model_Finder:
         self.logger_object.log(self.file_object, 'Entered the get_best_params_for_logistic_regression method of the Model_Finder class')
         try:
             # initializing with different combination of parameters
-            self.param_grid = {'Cs':[0.1,0.3,1,3,10],
+            self.param_grid = {'Cs':[1e-2,0.1,1],
                                'cv':[3,5,10],
                                'solver':['newton-cg','lbfgs','sag']
                                }
